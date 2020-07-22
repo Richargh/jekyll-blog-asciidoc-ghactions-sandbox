@@ -1,0 +1,288 @@
+---
+title: Test page to see how the raw AsciiDoc is rendered
+tags: markdown 
+comments: true
+---
+
+This is intended as a quick reference and showcase. For more on AsciiDoc directly consult
+link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
+or the link:https://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoc Writer's Guide].
+
+*Table of Contents*
+
+* <<headings, Headings>>
+* <<emphasis, Emphasis>>
+* <<lists>>
+* <<links>>
+* <<images>>
+* <<syntax>>
+* <<tables>>
+* <<blockquotes>>
+* <<passthrough>>
+* <<hr>>
+* <<br>>
+
+[#headings]
+== Headings
+
+....
+== H2
+=== H3
+==== H4
+===== H5
+====== H6
+....
+
+== H2
+=== H3
+==== H4
+===== H5
+====== H6
+
+[#emphasis]
+=== Emphasis
+
+....
+italic _constrained_ & __un__constrained
+bold *constrained* & **un**constrained
+bold italic *_constrained_* & **__un__**constrained
+monospace `constrained` & ``un``constrained
+Mark #specific# text parts
+Go ^super^script
+Go ~sub~script
+....
+
+* italic _constrained_ & __un__constrained
+* bold *constrained* & **un**constrained
+* bold italic *_constrained_* & **__un__**constrained
+* monospace `constrained` & ``un``constrained
+* Mark #specific# text parts.
+* Go ^super^script
+* Go ~sub~script
+
+[#lists]
+== Lists
+
+....
+. First ordered list item
+.. Ordered sublist
+. Another item
+ * Unordered sublist
+. And another item.
+
+Text between lists
+
+* Unordered lists use asterisks
+ . Ordered sublist
+* Another item
+....
+
+. First ordered list item
+.. Ordered sublist
+. Another item
+ * Unordered sublist
+. And another item.
+
+Text between lists
+
+* Unordered lists use asterisks
+ . Ordered sublist
+* Another item
+
+[#links]
+== Links
+
+
+....
+An inline-style link to link:https://www.google.com[Google].
+....
+
+An inline-style link to link:https://www.google.com[Google].
+
+[#images]
+== Images
+
+
+....
+Inline image:/assets/img/profile.jpg[title="Profile"] an image.
+
+Create a block:
+
+image::/assets/img/profile.jpg[Profile]
+
+.Create a referencable caption
+[#img-profile]
+[caption="Profile",link=https://github.com/richargh]
+image::/assets/img/profile.jpg[Profile,50,50]
+....
+
+Inline image:/assets/img/profile.jpg[title="Profile"] an image.
+
+Create a block:
+
+image::/assets/img/profile.jpg[Profile]
+
+.Create a referencable caption
+[#img-profile]
+[caption="Profile",link=https://github.com/richargh]
+image::/assets/img/profile.jpg[Profile,50,50]
+
+[#syntax]
+== Code and Syntax Highlighting
+
+Code blocks are part of the Asciidoc spec.
+
+....
+Inline `code` has `back-ticks around` it.
+
+Code block with title and syntax highlighting
+.app.js
+[source,javascript]
+----
+console.log("Hello World");
+----
+....
+
+Inline `code` has `back-ticks around` it.
+
+Code block with title and syntax highlighting:
+
+.app.js
+[source,javascript]
+----
+console.log("Hello World");
+----
+
+Code block with callouts:
+
+[source,javascript]
+----
+const greeting = "Hello World"; // <1>
+console.log(greeting); // <2>
+----
+<1> Variable assignment
+<2> Logging to console
+
+[#tables]
+== Tables
+
+Tables aren't part of the core Markdown spec, but they are part of GFM and Markdown Here supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.
+
+....
+.Table with a title, three columns, a header, and two rows of content
+|===
+|Name of Column 1 |Name of Column 2 |Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
+
+.Table from CSV data
+[%header,format=csv]
+|===
+Artist,Track,Genre
+Baauer,Harlem Shake,Hip Hop
+The Lumineers,Ho Hey,Folk Rock
+|===
+....
+
+.Table with a title, three columns, a header, and two rows of content
+|===
+|Name of Column 1 |Name of Column 2 |Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
+
+.Table from CSV data
+[%header,format=csv]
+|===
+Artist,Track,Genre
+Baauer,Harlem Shake,Hip Hop
+The Lumineers,Ho Hey,Folk Rock
+|===
+
+[#blockquotes]
+== Blockquotes
+
+....
+[quote, Abraham Lincoln, Address delivered at the dedication of the Cemetery at Gettysburg]
+____
+Four score and seven years ago our fathers brought forth
+on this continent a new nation...
+____
+....
+
+[quote, Abraham Lincoln, Address delivered at the dedication of the Cemetery at Gettysburg]
+____
+Four score and seven years ago our fathers brought forth
+on this continent a new nation...
+____
+
+[#passthrough]
+== Passthrough Html
+
+....
+You can also use raw HTML:
+
+++++
+<p>
+Content in a passthrough block is passed to the output unprocessed.
+That means you can include raw HTML, like this embedded Gist:
+</p>
+
+<script src="https://gist.github.com/mojavelinux/5333524.js">
+</script>
+++++
+....
+
+You can also use raw HTML:
+
+++++
+<p>
+Content in a passthrough block is passed to the output unprocessed.
+That means you can include raw HTML.
+</p>
+++++
+
+[#hr]
+== Horizontal Rule
+
+
+....
+Three '
+
+'''
+....
+
+Three '
+
+'''
+
+[#br]
+== Line Breaks
+
+....
+Rubies are red, +
+Topazes are blue.
+....
+
+Rubies are red, +
+Topazes are blue.
+
+'''
+
+File originally by link:https://github.com/raghuveerdotnet/simply-jekyll[Simply Jekyll]
+but modified to match AsciiDoc with examples from link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference].
+
+License: CC-BY

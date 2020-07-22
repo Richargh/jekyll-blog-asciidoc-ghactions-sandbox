@@ -1,0 +1,39 @@
+= Jekyll Blog with deployed to Github Pages via Github Actions
+
+== Features
+
+* Asciidoc
+
+== Usage
+
+There are two ways to use this template: check that it works locally with a local Jekyll installation or push it to Github directly :)
+If you do decide to publish to Github-Pages you need to enable it in your Github Repository Settings and for source pick `master branch /docs folder`.
+
+Check below to see how to <<modify-the-docs>>.
+
+=== Local
+
+1. [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) version 2.4.0 or above (check with `ruby -v`). I had a lot of fun with this one because macOS comes with an old Ruby version. [Rubyenv](https://github.com/rbenv/rbenv#installation) did wonders for me:
+* `brew install rbenv`
+* `rbenv init`
+* Close terminal
+* `which ruby` should now point to _~/.rbenv/shims/ruby_
+* `rbenv install -v 2.6.3`
+* `rbenv local 2.6.3`
+* `ruby -v` should now be 2.6.3 for this directory
+2. Go into the docs directory
+`cd docs`
+3. Install all gems: `bundle`
+4. Build the site and make it available on a local server:
+`bundle exec jekyll serve`
+5. Now browse to http://localhost:4000
+
+=== Github
+
+Github uses Jekyll to render static site content for Github-Pages. Content in a top-level _docs folder_ or in a _branch gh-pages_ is automatically rendered.
+
+== Modify the Docs
+[[modify-the-docs]]
+
+
+This repository uses link:https://jekyllrb.com/[Jekyll] and the link:https://github.com/raghuveerdotnet/simply-jekyll[Simply Jekyll Theme].
