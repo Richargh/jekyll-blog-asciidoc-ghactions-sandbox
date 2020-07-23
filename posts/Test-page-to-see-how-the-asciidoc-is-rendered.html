@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Knowledge Continuum" property="og:site_name"/>
+    <meta content="A non-linear thread of important ideas weaved together to explore and understand the fabric of knowledge." property="og:description">
+    <meta content="/about/" property="article:author"><meta content="Test page to see how the raw AsciiDoc is rendered" property="og:title">
+    <meta content="article" property="og:type">
+    <meta content="/posts/Test-page-to-see-how-the-asciidoc-is-rendered" property="og:url"><title>Richard's Blog</title>
+
+    <link rel="canonical" href="/posts/Test-page-to-see-how-the-asciidoc-is-rendered"/>
+    <link rel="apple-touch-icon" href="/assets/img/profile.jpg">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/png" sizes="16x16"/>
+    <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
+
+    <!--[if IE]>
+        <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml">
+</head>
+
+<body>
+    <div class="container">                    
+        <div class = "box"><header>
+    <div class="dashboard disable-select">
+        <div class="site-heading profile-board-col">
+           <h4 class="medium"><a href="/">Richard's Blog</a></h4>
+        </div>
+        <div class="userboard profile-board-col">
+            <div class="username">
+                <p class="title-sans"><a href="/about" style="text-decoration: none;">Richard Gross</a></p>
+            </div>
+            <div class="userdesc">
+                <p class="title-sans">Developer</p>
+            </div>
+        </div>
+    </div>
+    <div class="avatar disable-select" title="click me to know more">
+        <a class="avatar-link" href="/about">
+            <img src="/assets/img/profile.jpg" class="avatar-img" alt="avatar"/>
+        </a>
+    </div>
+    <div class="main-site-subheader menu disable-select">
+        <div class="home">
+            <a style="text-decoration: none;" href="/about">
+                <svg class="icon-home" width="18" height="19" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9777 21.6138V19.6138C20.9777 18.553 20.5563 17.5356 19.8061 16.7854C19.056 16.0353 18.0386 15.6138 16.9777 15.6138H8.97768C7.91682 15.6138 6.8994 16.0353 6.14926 16.7854C5.39911 17.5356 4.97768 18.553 4.97768 19.6138V21.6138"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.9777 11.6138C15.1868 11.6138 16.9777 9.82298 16.9777 7.61385C16.9777 5.40471 15.1868 3.61385 12.9777 3.61385C10.7685 3.61385 8.97768 5.40471 8.97768 7.61385C8.97768 9.82298 10.7685 11.6138 12.9777 11.6138Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="home-p">About</p>  
+            </a>
+        </div>
+        <div class="categories">
+            <a style="text-decoration: none;" href="/tags">
+            <svg class="icon-category" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 9.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5H20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 3.5L8 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.5L14 21.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                               
+            <p class="categories-p">Tags</p>
+            </a>
+        </div>
+        <div class="rss">
+            <a style="text-decoration: none;" href="/feed.xml">
+                <svg class="icon-rss" width="18" height="19" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 11.5C6.38695 11.5 8.67613 12.4482 10.364 14.136C12.0518 15.8239 13 18.1131 13 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 4.5C8.24346 4.5 12.3131 6.18571 15.3137 9.18629C18.3143 12.1869 20 16.2565 20 20.5"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 20.5C5.55228 20.5 6 20.0523 6 19.5C6 18.9477 5.55228 18.5 5 18.5C4.44772 18.5 4 18.9477 4 19.5C4 20.0523 4.44772 20.5 5 20.5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>    
+            <p class="rss-p">RSS</p>
+            </a>
+        </div>
+    </div>
+    <div class="searchbar search-container">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <label for="search-input"></label>
+        <input type="text" oninput="changeResultContainerDisp(this.value)" id="search-input" autocomplete="off" placeholder="Search the Blog..."/>
+        <ul id="results-container"></ul>
+    </div>
+    <script src="/assets/js/simple-jekyll-search.min.js"></script>
+    <script>
+        function changeResultContainerDisp(val) {
+            if (val) {
+                document.getElementById("results-container").style.display = "block";
+                document.getElementById("search-input").addEventListener('blur', function() {
+                    document.addEventListener('click', function(event) {
+                        var isClickInside = document.getElementById("results-container").contains(event.target);
+                        if (!isClickInside) {
+                            document.getElementById("results-container").style.display = "none";
+                        }
+                    })
+                }) 
+            }  else {
+                document.getElementById("results-container").style.display = "none";
+            }
+        }
+        var sjs = SimpleJekyllSearch({
+                    searchInput: document.getElementById('search-input'),
+                    resultsContainer: document.getElementById('results-container'),
+                    json: '/search.json',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: "Inter !important"; font-weight: 600;">{title}</p></a></li>',
+                    noResultsText: 'No results found',
+                    fuzzy: false,
+                    limit: 4
+                    })   
+    </script><div class="main-site-subheader disable-select" id="scroll-head" onclick="window.location.assign('/');">
+        <div class="back-icon">
+            <svg class="ripple" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z"/>
+            </svg>
+        </div>
+        <p class="back-p">Home</p>    
+    </div></header><main>
+                <h1>Test page to see how the raw AsciiDoc is rendered</h1><!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly --><ul class="tags"><li><a href="/dates/#01-January-2020" class="tag">January-01-2020</a></li>
+    <!-- Loop through page categories and print them in tags --><li><a href="/tags/#markdown" class="tag">markdown</a></li></ul><div class="content"><div class="paragraph">
+<p>This is intended as a quick reference and showcase. For more on AsciiDoc directly consult
+<a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">AsciiDoc Syntax Quick Reference</a>
+or the <a href="https://asciidoctor.org/docs/asciidoc-writers-guide/">AsciiDoc Writer&#8217;s Guide</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Table of Contents</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#headings">Headings</a></p>
+</li>
+<li>
+<p><a href="#emphasis">Emphasis</a></p>
+</li>
+<li>
+<p><a href="#lists">Lists</a></p>
+</li>
+<li>
+<p><a href="#links">Links</a></p>
+</li>
+<li>
+<p><a href="#images">Images</a></p>
+</li>
+<li>
+<p><a href="#syntax">Code and Syntax Highlighting</a></p>
+</li>
+<li>
+<p><a href="#tables">Tables</a></p>
+</li>
+<li>
+<p><a href="#blockquotes">Blockquotes</a></p>
+</li>
+<li>
+<p><a href="#passthrough">Passthrough Html</a></p>
+</li>
+<li>
+<p><a href="#hr">Horizontal Rule</a></p>
+</li>
+<li>
+<p><a href="#br">Line Breaks</a></p>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="headings">Headings</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>== H2
+=== H3
+==== H4
+===== H5
+====== H6</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="h2">H2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="h3">H3</h3>
+<div class="sect3">
+<h4 id="h4">H4</h4>
+<div class="sect4">
+<h5 id="h5">H5</h5>
+<div class="sect5">
+<h6 id="h6">H6</h6>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="emphasis">Emphasis</h3>
+<div class="literalblock">
+<div class="content">
+<pre>italic _constrained_ &amp; __un__constrained
+bold *constrained* &amp; **un**constrained
+bold italic *_constrained_* &amp; **__un__**constrained
+monospace `constrained` &amp; ``un``constrained
+Mark #specific# text parts
+Go ^super^script
+Go ~sub~script</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>italic <em>constrained</em> &amp; <em>un</em>constrained</p>
+</li>
+<li>
+<p>bold <strong>constrained</strong> &amp; <strong>un</strong>constrained</p>
+</li>
+<li>
+<p>bold italic <strong><em>constrained</em></strong> &amp; <strong><em>un</em></strong>constrained</p>
+</li>
+<li>
+<p>monospace <code>constrained</code> &amp; <code>un</code>constrained</p>
+</li>
+<li>
+<p>Mark <mark>specific</mark> text parts.</p>
+</li>
+<li>
+<p>Go <sup>super</sup>script</p>
+</li>
+<li>
+<p>Go <sub>sub</sub>script</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="lists">Lists</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>. First ordered list item
+.. Ordered sublist
+. Another item
+ * Unordered sublist
+. And another item.
+
+Text between lists
+
+* Unordered lists use asterisks
+ . Ordered sublist
+* Another item</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>First ordered list item</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Ordered sublist</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Another item</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Unordered sublist</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>And another item.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Text between lists</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Unordered lists use asterisks</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ordered sublist</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Another item</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="links">Links</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>An inline-style link to link:https://www.google.com[Google].</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An inline-style link to <a href="https://www.google.com">Google</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="images">Images</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>Inline image:/assets/img/profile.jpg[title="Profile"] an image.
+
+Create a block:
+
+image::/assets/img/profile.jpg[Profile]
+
+.Create a referencable caption
+[#img-profile]
+[caption="Profile",link=https://github.com/richargh]
+image::/assets/img/profile.jpg[Profile,50,50]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Inline <span class="image"><img src="/assets/img/profile.jpg" alt="profile" title="Profile"></span> an image.</p>
+</div>
+<div class="paragraph">
+<p>Create a block:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/img/profile.jpg" alt="Profile">
+</div>
+</div>
+<div id="img-profile" class="imageblock">
+<div class="content">
+<a class="image" href="https://github.com/richargh"><img src="/assets/img/profile.jpg" alt="Profile" width="50" height="50"></a>
+</div>
+<div class="title">ProfileCreate a referencable caption</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax">Code and Syntax Highlighting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Code blocks are part of the Asciidoc spec.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Inline `code` has `back-ticks around` it.
+
+Code block with title and syntax highlighting
+.app.js
+[source,javascript]
+----
+console.log("Hello World");
+----</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Inline <code>code</code> has <code>back-ticks around</code> it.</p>
+</div>
+<div class="paragraph">
+<p>Code block with title and syntax highlighting:</p>
+</div>
+<div class="listingblock">
+<div class="title">app.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">console.log("Hello World");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code block with callouts:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">const greeting = "Hello World"; // <b class="conum">(1)</b>
+console.log(greeting); // <b class="conum">(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Variable assignment</p>
+</li>
+<li>
+<p>Logging to console</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tables">Tables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tables aren&#8217;t part of the core Markdown spec, but they are part of GFM and Markdown Here supports them. They are an easy way of adding tables to your email&#8201;&#8212;&#8201;a task that would otherwise require copy-pasting from another application.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>.Table with a title, three columns, a header, and two rows of content
+|===
+|Name of Column 1 |Name of Column 2 |Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
+
+.Table from CSV data
+[%header,format=csv]
+|===
+Artist,Track,Genre
+Baauer,Harlem Shake,Hip Hop
+The Lumineers,Ho Hey,Folk Rock
+|===</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Table with a title, three columns, a header, and two rows of content</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name of Column 1</th>
+<th class="tableblock halign-left valign-top">Name of Column 2</th>
+<th class="tableblock halign-left valign-top">Name of Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Table from CSV data</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Artist</th>
+<th class="tableblock halign-left valign-top">Track</th>
+<th class="tableblock halign-left valign-top">Genre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Baauer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Harlem Shake</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hip Hop</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Lumineers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ho Hey</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Folk Rock</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="blockquotes">Blockquotes</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>[quote, Abraham Lincoln, Address delivered at the dedication of the Cemetery at Gettysburg]
+____
+Four score and seven years ago our fathers brought forth
+on this continent a new nation...
+____</pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Four score and seven years ago our fathers brought forth
+on this continent a new nation&#8230;&#8203;</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Abraham Lincoln<br>
+<cite>Address delivered at the dedication of the Cemetery at Gettysburg</cite>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="passthrough">Passthrough Html</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>You can also use raw HTML:
+
+++++
+&lt;p&gt;
+Content in a passthrough block is passed to the output unprocessed.
+That means you can include raw HTML, like this embedded Gist:
+&lt;/p&gt;
+
+&lt;script src="https://gist.github.com/mojavelinux/5333524.js"&gt;
+&lt;/script&gt;
+++++</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also use raw HTML:</p>
+</div>
+<p>
+Content in a passthrough block is passed to the output unprocessed.
+That means you can include raw HTML.
+</p>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hr">Horizontal Rule</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>Three '
+
+'''</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Three '</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="br">Line Breaks</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>Rubies are red, +
+Topazes are blue.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Rubies are red,<br>
+Topazes are blue.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>File originally by <a href="https://github.com/raghuveerdotnet/simply-jekyll">Simply Jekyll</a>
+but modified to match AsciiDoc with examples from <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">AsciiDoc Syntax Quick Reference</a>.</p>
+</div>
+<div class="paragraph">
+<p>License: CC-BY</p>
+</div>
+</div>
+</div>
+</div><!-- Add backlinks to the current page --></main><!-- DISQUS COMMENT SECTION, DO NOT TOUCH -->
+<div id="disqus_thread"></div>
+    <script>
+        /**
+         *RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        var disqus_config = function () {
+        this.page.url = '/posts/Test-page-to-see-how-the-asciidoc-is-rendered';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = '/posts/Test-page-to-see-how-the-asciidoc-is-rendered'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><div id="copyright">
+    <p id="copyright-notice">© Richard Gross</p>
+</div> </div>
+        <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>
+    </div>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>
+        document.getElementById("scroll-to-top").addEventListener("click", function() {
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        });
+    </script></body>
+</html>
