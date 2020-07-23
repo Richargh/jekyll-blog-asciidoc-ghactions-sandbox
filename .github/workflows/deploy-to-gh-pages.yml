@@ -23,12 +23,6 @@ jobs:
 
       ## The Personal Access Token (PAT) is created in your Personal Github Profile, and must be set in each repostiories settings->secrets
 
-      # Standard usage
-      - uses:  helaili/jekyll-action@2.0.3
-        working-directory: ./docs
-        env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
-
       # Specify the Jekyll source location as a parameter
       - uses: helaili/jekyll-action@2.0.3
         env:
