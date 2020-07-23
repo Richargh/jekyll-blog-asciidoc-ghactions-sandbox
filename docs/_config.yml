@@ -4,8 +4,8 @@ user_description: Developer
 profile_pic: /assets/img/profile.jpg
 favicon: /assets/img/favicon.ico
 copyright_name: Richard Gross
-baseurl: "/jekyll-blog-asciidoc-ghactions-sandbox/" # the subpath of your site, e.g. /blog
-url: "richargh.de" # the base hostname & protocol for your site, e.g. http://example.com
+url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl: # the subpath of your site, e.g. "/blog"
 encoding: utf-8
 
 # Build settings
