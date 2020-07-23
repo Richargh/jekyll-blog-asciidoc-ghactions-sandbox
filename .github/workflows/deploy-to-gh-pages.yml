@@ -21,7 +21,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      ## The Personal Access Token (PAT) is created in your Personal Github Profile, and must be set in each repostiories settings->secrets
+      ## The Personal Access Token (PAT) is created in your Personal Github Profile https://github.com/settings/tokens
+      ## and must be set in each repostiories settings under secrets
 
       # Specify the Jekyll source location as a parameter
       - uses: helaili/jekyll-action@2.0.3
