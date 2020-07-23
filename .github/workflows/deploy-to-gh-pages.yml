@@ -25,6 +25,7 @@ jobs:
 
       # Standard usage
       - uses:  helaili/jekyll-action@2.0.3
+        working-directory: ./docs
         env:
           JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
 
